@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>NumberBrain - ProBrain</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <script src="index.js"></script>
+    <body>
+        <div>Bem vindo ao NumberBrain!</div>
+        
+        <form action="">
+            <label for="number">Choose a number from 1 to 1000:</label><br>
+            <input type="number" id="number" name="number" value=""><br>
+            
+            <br />
+            <br />
+            <label for="task">Choose a task:</label>
+            <br />
+            <div class="tasksContainer">
+                <div id="oddeven-task" class="boxCard" onclick="callTasks(number.value)">Odd or even?</div>
+                <div id="prime-task" class="boxCard" onclick="callTasks(number.value)">Is it prime?</div>
+                <div id="fibo-task" class="boxCard" onclick="callTasks(number.value)">Fibonacci number?</div>
+                <div id="pin-task" class="boxCard" onclick="callTasks(number.value)">4's pin game!</div>
+            </div>
+
+            <h1 id="task-result"></h1>
+
+            <div class="resultsContainer">
+                <div id="oddeven-result"></div>
+                <div id="prime-result"></div>
+                <div id="fibo-result"></div>
+                <p id="pin-result"></p>
+            </div>
+            
+        </form> 
+    </body>
+</html>
