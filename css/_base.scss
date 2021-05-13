@@ -1,4 +1,6 @@
-$body-color: #45a29e;
+$body-color: #0b0c10;
+$text-color: #45a29e;
+$hover-color: #c5c6c7;
 
 .flex {
     display: flex;
@@ -12,11 +14,46 @@ body {
 
 .hello-container {
     @extend .flex;
+    color: $text-color;
     flex-direction: column;
     height: 100%;
 }
 
 .label-container {
     @extend .flex;
+    color: $text-color;
     flex-direction: column;
 }
+
+.tasksContainer {
+    @extend .flex;
+    color: $text-color;
+    flex-direction: row;
+
+    .boxCard {
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid;
+
+        &:hover {
+            color: $hover-color;
+            cursor: context-menu;
+        }
+    }
+}
+
+.resultsContainer {
+    @extend .flex;
+    $results-hidden: true;
+    color: $text-color;
+    flex-direction: row;
+
+    div {
+        margin: 10px;
+        padding: 10px;
+        max-width: 200px;
+        max-height: 250px;
+        overflow: auto;
+    }
+}
+

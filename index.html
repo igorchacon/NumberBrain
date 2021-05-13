@@ -19,7 +19,7 @@
                 <input type="number" id="number" name="number" value=""><br>
             </div>
             
-            <label for="task">Now choose a task:</label>
+            <label for="task" class="label-container">Now choose a task:</label>
 
             <div class="tasksContainer">
                 <div id="oddeven-task" class="boxCard" onclick="callTasks(number.value)">Odd or even?</div>
@@ -28,15 +28,13 @@
                 <div id="pin-task" class="boxCard" onclick="callTasks(number.value)">4's pin game!</div>
             </div>
 
-            <h1 id="task-result"></h1>
-
             <div class="resultsContainer">
                 <div id="oddeven-result"></div>
                 <div id="prime-result"></div>
                 <div id="fibo-result"></div>
-                <p id="pin-result"></p>
+                <div id="pin-result"></div>
             </div>
-            
+            <div id="line"></div>
         </form> 
     </body>
 </html>

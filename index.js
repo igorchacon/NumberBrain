@@ -7,7 +7,6 @@ const validateValue = (value) => {
 };
 
 const oddEven = (value) => {
-    console.log(value);
     if (value%2 === 0) {
         return true;
     } else {
@@ -103,23 +102,56 @@ const appendPin = (value) => {
     const arrayPins = pin(value);
 
     for (let i = 0; i < arrayPins.length; i++) {
-        let node = document.createElement("div");
-        let textnode = document.createTextNode(arrayPins[i]);
+        let node = document.createElement("span");
+        let textnode = document.createTextNode(" " + arrayPins[i]);
         node.appendChild(textnode);
-        document.getElementById("pin-result").appendChild(node);
+        document.getElementById("pin-result").appendChild(node).setAttribute("class", "results");
+    }
+};
+
+localStorage.setItem('onScreen', "false");
+
+const isResultOnScreenChangeToken = () => {
+    const isOnScreenToken = localStorage.getItem('onScreen')
+    if (isOnScreenToken == "false") {
+        localStorage.setItem('onScreen', "true");
+    } else {
+        localStorage.setItem('onScreen', "false");
+    }
+    
+};
+
+const isOnScreen = (isOnScreen) => {
+    if (isOnScreen == "true") {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+const clearAllResults = () => {
+    const results = document.querySelectorAll(".results")
+    for (let result of results) {
+        result.remove()
     }
 };
 
 const callTasks = (value) => {
-    if (validateValue(value)) {
+    const isOnScreenToken = localStorage.getItem('onScreen')
+
+    if (validateValue(value) && !isOnScreen(isOnScreenToken)) {
         appendOddEven(value);
         appendFibonacci(value);
         appendPrime(value);
         appendPin(value);
-    } else {
+        isResultOnScreenChangeToken();
+    } else if (!validateValue(value)) {
         alert("Please, insert a valid value.");
+    } else if (!isOnScreen(isOnScreen)) {
+        clearAllResults()
+        isResultOnScreenChangeToken()
+        callTasks(value)
     }
-    
 }
 
 

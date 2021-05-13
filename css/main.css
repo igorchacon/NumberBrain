@@ -1,4 +1,4 @@
-.flex, .hello-container, .label-container {
+.flex, .hello-container, .label-container, .tasksContainer, .resultsContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11,10 +11,11 @@
 }
 
 body {
-  background-color: #45a29e;
+  background-color: #0b0c10;
 }
 
 .hello-container {
+  color: #45a29e;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -23,9 +24,45 @@ body {
 }
 
 .label-container {
+  color: #45a29e;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.tasksContainer {
+  color: #45a29e;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.tasksContainer .boxCard {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid;
+}
+
+.tasksContainer .boxCard:hover {
+  color: #c5c6c7;
+  cursor: context-menu;
+}
+
+.resultsContainer {
+  color: #45a29e;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.resultsContainer div {
+  margin: 10px;
+  padding: 10px;
+  max-width: 200px;
+  max-height: 250px;
+  overflow: auto;
 }
 /*# sourceMappingURL=main.css.map */
