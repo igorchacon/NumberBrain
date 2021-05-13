@@ -4,20 +4,23 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <title>NumberBrain - ProBrain</title>
-        <link href="style.css" rel="stylesheet" type="text/css" />
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
     </head>
     <script src="index.js"></script>
     <body>
-        <div>Bem vindo ao NumberBrain!</div>
+
+        <div class="hello-container"> 
+            <h1>Welcome to NumberBrain!</h1> 
+        </div>
         
         <form action="">
-            <label for="number">Choose a number from 1 to 1000:</label><br>
-            <input type="number" id="number" name="number" value=""><br>
+            <div class="label-container">
+                <label for="number">Choose a number from 1 to 1000</label><br>
+                <input type="number" id="number" name="number" value=""><br>
+            </div>
             
-            <br />
-            <br />
-            <label for="task">Choose a task:</label>
-            <br />
+            <label for="task">Now choose a task:</label>
+
             <div class="tasksContainer">
                 <div id="oddeven-task" class="boxCard" onclick="callTasks(number.value)">Odd or even?</div>
                 <div id="prime-task" class="boxCard" onclick="callTasks(number.value)">Is it prime?</div>

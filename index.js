@@ -1,5 +1,5 @@
 const validateValue = (value) => {
-    if (value) {
+    if (value && value <= 1000) {
         return true;
     } else {
         return false;

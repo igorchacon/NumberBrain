@@ -1,0 +1,22 @@
+$body-color: #45a29e;
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    background-color: $body-color;
+}
+
+.hello-container {
+    @extend .flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.label-container {
+    @extend .flex;
+    flex-direction: column;
+}
