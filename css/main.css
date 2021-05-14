@@ -47,6 +47,7 @@ body {
 
 .tasksContainer .boxCard:hover {
   color: #c5c6c7;
+  background-color: #45a29e;
   cursor: context-menu;
 }
 
@@ -56,6 +57,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .resultsContainer div {
